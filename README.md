@@ -1,4 +1,4 @@
-# OctoPrint-M117PopUp
+# OctoPrint-M117PopUp-and-LCD
 
 Octoprint plugin to send M117 gcode messages to OctoPrint's built in alerting system.
 
