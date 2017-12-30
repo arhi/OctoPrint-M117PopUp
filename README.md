@@ -2,6 +2,8 @@
 
 Octoprint plugin to send M117 gcode messages to OctoPrint's built in alerting system.
 
+LCDmod -> send same messages to I2C connected LCD
+
 Note: this plugin does NOT work with files on the SD card.
 
 ![screenshot](screenshot.png)
@@ -13,7 +15,7 @@ Note: this plugin does NOT work with files on the SD card.
 
 Install via the bundled Plugin Manager or manually using this URL:
 
-https://github.com/jneilliii/OctoPrint-M117PopUp/archive/master.zip
+https://github.com/arhi/OctoPrint-M117PopUp-and-LCD/archive/master.zip
 
 ###Changelog
 
