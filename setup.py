@@ -33,7 +33,7 @@ plugin_url = "https://github.com/jneilliii/OctoPrint-M117PopUp"
 plugin_license = "AGPLv3"
 
 # Any additional requirements besides OctoPrint should be listed here
-plugin_requires = ['Adafruit-BBIO', 'OPi.GPIO', 'Adafruit_Python_CharLCD']
+plugin_requires = ['Adafruit-BBIO', 'OPi.GPIO']
 
 # Additional package data to install for this plugin. The subfolders "templates", "static" and "translations" will
 # already be installed automatically if they exist.
