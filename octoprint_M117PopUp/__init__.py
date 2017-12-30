@@ -19,24 +19,20 @@ lcd_blue      =  8
 lcd_columns = 16
 lcd_rows = 2
 
-gpio = MCP.MCP23017(0x20, busnum=0)
-lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7, lcd_columns, lcd_rows, lcd_red, lcd_green, lcd_blue, gpio=gpio)
-
-
 class M117PopUp(octoprint.plugin.AssetPlugin,
 				octoprint.plugin.TemplatePlugin,
                 octoprint.plugin.SettingsPlugin):
 
-#	def on_after_startup(self):
-#                gpio = MCP.MCP23017(0x20, busnum=0)
-#		lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7, lcd_columns, lcd_rows, lcd_red, lcd_green, lcd_blue, gpio=gpio)
+	def on_after_startup(self):
+                self.gpio = MCP.MCP23017(0x20, busnum=0)
+		self.lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7, lcd_columns, lcd_rows, lcd_red, lcd_green, lcd_blue, gpio=self.gpio)
 
 	
 	def AlertM117(self, comm_instance, phase, cmd, cmd_type, gcode, *args, **kwargs):
 		if gcode and cmd.startswith("M117"):
 			self._plugin_manager.send_plugin_message(self._identifier, dict(type="popup", msg=re.sub(r'^M117\s?', '', cmd)))
-			lcd.clear()
-			lcd.message(re.sub(r'^M117\s?', '', cmd))
+			self.lcd.clear()
+			self.lcd.message(re.sub(r'^M117\s?', '', cmd))
 			return
 	
 	##-- AssetPlugin hooks
