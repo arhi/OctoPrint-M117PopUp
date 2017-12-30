@@ -68,7 +68,7 @@ class M117PopUp(octoprint.plugin.AssetPlugin,
 				current=self._plugin_version,
 
 				# update method: pip
-				pip="https://github.com/jneilliii/OctoPrint-M117PopUp/archive/{target_version}.zip"
+				pip="https://github.com/arhi/OctoPrint-M117PopUp-and-LCD/archive/{target_version}.zip"
 			)
 		)
 
