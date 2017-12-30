@@ -32,7 +32,10 @@ class M117PopUp(octoprint.plugin.AssetPlugin,
                         gpio = MCP.MCP23017(0x20, busnum=0)
 		        lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7, lcd_columns, lcd_rows, lcd_red, lcd_green, lcd_blue, gpio=gpio)
 			lcd.clear()
-			lcd.message(re.sub(r'^M117\s?', '', cmd))
+			lcd.message(re.sub(r'^M117\s?', '', cmd)+"\n" )
+			tleft = re.search(r'\(.*\)', msg)
+			if tleft:
+				lcd.message( tleft.group(0) )
 			return
 	
 	##-- AssetPlugin hooks
