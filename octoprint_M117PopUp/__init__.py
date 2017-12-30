@@ -54,13 +54,13 @@ class M117PopUp(octoprint.plugin.AssetPlugin,
 	def get_update_information(self):
 		return dict(
 			m117popup=dict(
-				displayName="M117PopUp",
+				displayName="M117PopUp and LCD",
 				displayVersion=self._plugin_version,
 
 				# version check: github repository
 				type="github_release",
-				user="jneilliii",
-				repo="OctoPrint-M117PopUp",
+				user="arhi",
+				repo="OctoPrint-M117PopUp-and-LCD",
 				current=self._plugin_version,
 
 				# update method: pip
