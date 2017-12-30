@@ -4,17 +4,17 @@
 ### Do not forget to adjust the following variables to your own plugin.
 
 # The plugin's identifier, has to be unique
-plugin_identifier = "M117PopUp"
+plugin_identifier = "M117PopUp-and-LCD"
 
 # The plugin's python package, should be "octoprint_<plugin identifier>", has to be unique
 plugin_package = "octoprint_%s" % plugin_identifier
 
 # The plugin's human readable name. Can be overwritten within OctoPrint's internal data via __plugin_name__ in the
 # plugin module
-plugin_name = "OctoPrint-M117PopUp"
+plugin_name = "OctoPrint-M117PopUp-and-LCD"
 
 # The plugin's version. Can be overwritten within OctoPrint's internal data via __plugin_version__ in the plugin module
-plugin_version = "0.6.0"
+plugin_version = "0.0.0"
 
 # The plugin's description. Can be overwritten within OctoPrint's internal data via __plugin_description__ in the plugin
 # module
@@ -33,7 +33,7 @@ plugin_url = "https://github.com/jneilliii/OctoPrint-M117PopUp"
 plugin_license = "AGPLv3"
 
 # Any additional requirements besides OctoPrint should be listed here
-plugin_requires = []
+plugin_requires = ['Adafruit-BBIO', 'OPi.GPIO', 'Adafruit_Python_CharLCD']
 
 # Additional package data to install for this plugin. The subfolders "templates", "static" and "translations" will
 # already be installed automatically if they exist.
